@@ -1,15 +1,14 @@
 import React from 'react';
-import './App.css';
+// import { NavBar } from '../components/NavBar/NavBar'
+import { LandingPage } from '../components/LandingPage/LandingPage'
+import { Route } from "react-router-dom"
+import { Login } from "../auth/Login"
+import { Register } from "../auth/Register"
 
-class App extends React.Component {
-  render() {
-    return (
-      <div className="App">
-        <h2>INSIDE APP COMPONENT</h2>
-        <button className="btn btn-info">I am a button</button>
-      </div>
-    );
-  }
-}
-
-export default App;
+export const App = () => (
+  <>
+    <Route path="/" render={LandingPage} />
+    <Route path="/login" render={Login} />
+    <Route path="/register" render={Register} />
+  </>
+)
